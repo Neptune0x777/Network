@@ -20,6 +20,7 @@ nc IP PORT
 | `-z`         | Zero-I/O mode (used for port scanning)                                 |
 | `-w <sec>`   | Set connection timeout in seconds                                      |
 | `-k`         | Keep listening after a connection closes (server mode)                 |
+
 ***FTP***
 ```bash
 ftp -p <TARGET> // -p passive mode
@@ -41,6 +42,7 @@ ftp -p <TARGET> // -p passive mode
 | `passive`     | Toggle passive mode on/off                         |
 | `help`        | Show available FTP commands                       |
 | `bye` / `exit`| Disconnect and close the FTP session              |
+
 ***Nmap***
 ```bash
 nmap -OPTIONS IP
