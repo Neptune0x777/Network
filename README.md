@@ -6,8 +6,21 @@ netstat -rn // will show us the networks accessible
 ```
 ***Netcat ncat or nc***
 ```bash
-netcat IP PORT
+nc IP PORT
 ```
+| Option       | Description                                                         |
+|--------------|---------------------------------------------------------------------|
+| `-l`         | Listen mode (attend une connexion entrante)                         |
+| `-v`         | Mode verbeux (affiche les infos de connexion)                         |
+| `-n`         | Ne résout pas les noms DNS (IP direct)                              |
+| `-p <port>`  | Spécifie le port source (à utiliser avec `-l`)                       |
+| `-e <cmd>`   | Exécute une commande après connexion (⚠️ potentiellement désactivé) |
+| `-c <cmd>`   | Comme `-e`, mais en mode shell intégré                              |
+| `-u`         | Utilise UDP au lieu de TCP                                          |
+| `-z`         | Mode "scan de port" sans envoyer de données                         |
+| `-w <sec>`   | Timeout de connexion (en secondes)                                  |
+| `-k`         | Garde le port ouvert après une connexion (listen)                   |
+
 ***Nmap***
 ```bash
 nmap -OPTIONS IP
