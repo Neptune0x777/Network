@@ -32,6 +32,24 @@ nmap -OPTIONS IP
 | --script  | Specify NSE scripts to run                                      |
 | -sn       | Ping scan: only detect active hosts, no port scan               |
 
+| Script Category      | Example Script        | Description                                                                 |
+|----------------------|-----------------------|-----------------------------------------------------------------------------|
+| default              | -                     | Default script set (used with `-sC`)                                        |
+| safe                 | -                     | Scripts considered non-intrusive                                            |
+| vuln                 | `vulners`, `http-vuln*`| Checks for known vulnerabilities (CVEs, exploits)                          |
+| auth                 | `ftp-anon`, `http-auth`| Authentication-related checks (e.g., anonymous login)                      |
+| brute                | `ssh-brute`, `ftp-brute`| Performs brute force attacks on various protocols                         |
+| discovery            | `broadcast-dhcp-discover`, `dns-brute` | Gathers information from the network                       |
+| dos                  | `http-slowloris`      | Denial of service testing (⚠️ dangerous)                                    |
+| exploit              | `http-shellshock`, `ftp-proftpd-backdoor` | Attempts known exploits (⚠️ dangerous)                  |
+| malware              | `http-malware-host`, `irc-unrealircd-backdoor` | Detects backdoors or malware-infected services     |
+| safe version scan    | `banner`, `http-title`| Basic fingerprinting/info gathering                                          |
+| smb                  | `smb-enum-shares`, `smb-os-discovery` | SMB-related information and vulnerability checks            |
+| ssl                  | `ssl-cert`, `ssl-enum-ciphers` | Checks for SSL/TLS certificate info and weak ciphers                |
+| http                 | `http-title`, `http-methods`, `http-headers` | Info about HTTP servers                              |
+| ftp                  | `ftp-anon`, `ftp-syst`| FTP server info and login checks                                            |
+| ssh                  | `ssh-hostkey`, `ssh-auth-methods` | SSH version and login info                                      |
+
 ***Ports***
 
 | Port | Protocole | Service         | Description                                                            |
