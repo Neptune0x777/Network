@@ -119,7 +119,7 @@ nmap -OPTIONS IP
 | exploit              | `http-shellshock`, `ftp-proftpd-backdoor` | Attempts known exploits (⚠️ dangerous)                  |
 | malware              | `http-malware-host`, `irc-unrealircd-backdoor` | Detects backdoors or malware-infected services     |
 | safe version scan    | `banner`, `http-title`| Basic fingerprinting/info gathering                                          |
-| smb                  | `smb-enum-shares`, `smb-os-discovery` | SMB-related information and vulnerability checks            |
+| smb                  | `smb-enum-shares`, `smb-os-discovery` | SMB-related information and vulnerability checks            |v
 | ssl                  | `ssl-cert`, `ssl-enum-ciphers` | Checks for SSL/TLS certificate info and weak ciphers                |
 | http                 | `http-title`, `http-methods`, `http-headers` | Info about HTTP servers                              |
 | ftp                  | `ftp-anon`, `ftp-syst`| FTP server info and login checks                                            |
@@ -154,6 +154,10 @@ curl -IL <URL>  // -I HEADERS ONLY -L Accept redirection
 ```
 ***whatsweb***
 ```bash
-whatweb <target> or <target/range>
+Whatweb <target> or <target/range>
 ```
-
+# Exploit
+***finding***
+```bash
+searchsploit openssh 7.2 // exploitdb packet
+```
