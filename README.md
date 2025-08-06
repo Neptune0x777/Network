@@ -129,16 +129,31 @@ nmap -OPTIONS IP
 
 | Port | Protocole | Service         | Description                                                            |
 |------|-----------|-----------------|------------------------------------------------------------------------|
-| 20/21| TCP	   | FTP             | Uncrypted file transfert                                                |
+| 20/21| TCP	   | FTP             | Uncrypted file transfert                                               |
 | 22   | TCP       | SSH             | Secure remote access                                                   |
 | 23   | TCP       | Telnet          | Uncrypted remote access                                                |
 | 25   | TCP       | SMTP            | Sending emails (unencrypted by default)                                |
 | 53   | UDP/TCP   | DNS             | Domain name resolution                                                 |
-| 80   | TCP       | HTTP            | Unencrypted web traffic                                                  |
+| 80   | TCP       | HTTP            | Unencrypted web traffic                                                |
 | 161  | TCP/UDP   | SNMP            | Used for network management (v1/v2c are unencrypted)                   |
-| 443  | TCP       | HTTPS           | Encrypted web traffic (SSL/TLS)                                          |
+| 443  | TCP       | HTTPS           | Encrypted web traffic (SSL/TLS)                                        |
 | 445  | TCP       | SMB             | File sharing protocol (commonly targeted                               |
 | 3389 | TCP       | RDP             | Remote desktop access (often targeted, requires strong authentication) |
 
 # Web
+***Gobuster***
+```bash
+gobuser <mode> -OPTIONS 
+gobuster dir -u http://10.10.10.121/ -w /usr/share/seclists/Discovery/Web-Content/common.txt // mode: dir -u URL -w Wordlist
+gobuster dns -d <TARGET> -w /usr/share/SecLists/Discovery/DNS/namelist.txt // mode dns -d dnsname -w Wordlist
+
+## Banner grabing
+***Curl***
+```bash
+curl -IL <URL>  // -I HEADERS ONLY -L Accept redirection
+```
+***whatsweb***
+```bash
+whatweb <target> or <target/range>
+```
 
