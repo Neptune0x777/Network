@@ -9,6 +9,9 @@ netstat -rn // will show us the networks accessible
 netcat IP PORT
 ```
 ***Nmap***
+```bash
+nmap -OPTIONS IP
+```
 | Option    | Description                                                     |
 |-----------|-----------------------------------------------------------------|
 | -sS       | TCP SYN scan (stealth scan)                                     |
