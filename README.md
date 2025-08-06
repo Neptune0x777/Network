@@ -8,18 +8,18 @@ netstat -rn // will show us the networks accessible
 ```bash
 nc IP PORT
 ```
-| Option       | Description                                                         |
-|--------------|---------------------------------------------------------------------|
-| `-l`         | Listen mode (attend une connexion entrante)                         |
-| `-v`         | Mode verbeux (affiche les infos de connexion)                         |
-| `-n`         | Ne résout pas les noms DNS (IP direct)                              |
-| `-p <port>`  | Spécifie le port source (à utiliser avec `-l`)                       |
-| `-e <cmd>`   | Exécute une commande après connexion (⚠️ potentiellement désactivé) |
-| `-c <cmd>`   | Comme `-e`, mais en mode shell intégré                              |
-| `-u`         | Utilise UDP au lieu de TCP                                          |
-| `-z`         | Mode "scan de port" sans envoyer de données                         |
-| `-w <sec>`   | Timeout de connexion (en secondes)                                  |
-| `-k`         | Garde le port ouvert après une connexion (listen)                   |
+| Option       | Description                                                            |
+|--------------|------------------------------------------------------------------------|
+| `-l`         | Listen mode (waits for incoming connection)                            |
+| `-v`         | Verbose mode (prints connection details)                               |
+| `-n`         | Do not resolve DNS (use raw IP addresses)                              |
+| `-p <port>`  | Specify source port (used with `-l`)                                   |
+| `-e <cmd>`   | Execute a command after connection (⚠️ often disabled for security)    |
+| `-c <cmd>`   | Same as `-e`, but uses internal shell (less common)                    |
+| `-u`         | Use UDP instead of TCP                                                 |
+| `-z`         | Zero-I/O mode (used for port scanning)                                 |
+| `-w <sec>`   | Set connection timeout in seconds                                      |
+| `-k`         | Keep listening after a connection closes (server mode)                 |
 
 ***Nmap***
 ```bash
