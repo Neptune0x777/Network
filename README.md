@@ -20,7 +20,27 @@ nc IP PORT
 | `-z`         | Zero-I/O mode (used for port scanning)                                 |
 | `-w <sec>`   | Set connection timeout in seconds                                      |
 | `-k`         | Keep listening after a connection closes (server mode)                 |
-
+***FTP***
+```bash
+ftp -p <TARGET> // -p passive mode
+```
+| Command       | Description                                       |
+|---------------|---------------------------------------------------|
+| `ls`          | List files in the current remote directory         |
+| `cd <dir>`    | Change directory on the remote server             |
+| `pwd`         | Show the current remote working directory         |
+| `get <file>`   | Download a file from the server to your machine    |
+| `put <file>`   | Upload a file from your machine to the server      |
+| `mget <files>` | Download multiple files (wildcards allowed)        |
+| `mput <files>` | Upload multiple files                              |
+| `delete <file>`| Delete a file on the remote server                 |
+| `mkdir <dir>` | Create a directory on the remote server           |
+| `rmdir <dir>` | Remove a directory on the remote server           |
+| `binary`      | Switch to binary transfer mode (for non-text files)|
+| `ascii`       | Switch to ASCII transfer mode (for text files)     |
+| `passive`     | Toggle passive mode on/off                         |
+| `help`        | Show available FTP commands                       |
+| `bye` / `exit`| Disconnect and close the FTP session              |
 ***Nmap***
 ```bash
 nmap -OPTIONS IP
