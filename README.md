@@ -4,6 +4,10 @@
 ```bash
 netstat -rn // will show us the networks accessible
 ```
+***Netcat ncat or nc***
+```bash
+netcat IP PORT
+```
 ***Ports***
 ```bash
 | Port | Protocole | Service         | Description                                                            |
