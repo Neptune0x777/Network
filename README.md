@@ -140,3 +140,5 @@ nmap -OPTIONS IP
 | 445  | TCP       | SMB             | File sharing protocol (commonly targeted                               |
 | 3389 | TCP       | RDP             | Remote desktop access (often targeted, requires strong authentication) |
 
+# Web
+
