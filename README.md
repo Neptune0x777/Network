@@ -30,7 +30,7 @@ netcat IP PORT
 | -sn       | Ping scan: only detect active hosts, no port scan               |
 
 ***Ports***
-```bash
+
 | Port | Protocole | Service         | Description                                                            |
 |------|-----------|-----------------|------------------------------------------------------------------------|
 | 20/21| TCP	   | FTP             | Uncrypted file transfert                                                |
@@ -43,4 +43,4 @@ netcat IP PORT
 | 443  | TCP       | HTTPS           | Encrypted web traffic (SSL/TLS)                                          |
 | 445  | TCP       | SMB             | File sharing protocol (commonly targeted                               |
 | 3389 | TCP       | RDP             | Remote desktop access (often targeted, requires strong authentication) |
-```
+
