@@ -67,6 +67,7 @@ smbclient -U bob -N -L \\\\TARGET // -N Anonymous -L list -U user
 ```bash
 snmpwalk -version -communitychain <TARGET> <OID>
 snmpwalk -v 2c -c public 10.129.42.253 1.3.6.1.2.1.1.5.0 // -v version -c community chain
+onesixtyone -c <DICT> <TARGET> //  brute force community string name : -c Dictionary file 
 ```
 | OID Prefix              | OID Example               | Name/Description                     | Notes                         |
 |------------------------|--------------------------|---------------------------------------|-------------------------------|
