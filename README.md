@@ -43,6 +43,26 @@ ftp -p <TARGET> // -p passive mode
 | `help`        | Show available FTP commands                       |
 | `bye` / `exit`| Disconnect and close the FTP session              |
 
+***SMB***
+```bash
+smbclient -OPTIONS \\TARGET\DIR
+smbclient -U bob -N -L \\\\TARGET // -N Anonymous -L list -U user
+```
+| Command       | Description                                    |
+|---------------|------------------------------------------------|
+| `ls`          | List files and directories in the current share |
+| `cd <dir>`    | Change directory on the remote share           |
+| `get <file>`  | Download a file from the share                   |
+| `put <file>`  | Upload a file to the share                       |
+| `mget <files>`| Download multiple files                          |
+| `mput <files>`| Upload multiple files                            |
+| `del <file>`  | Delete a file on the share                       |
+| `mkdir <dir>` | Create a directory on the share                |
+| `rmdir <dir>` | Remove a directory on the share                |
+| `pwd`         | Print the current directory on the share       |
+| `exit`        | Disconnect from the SMB share                  |
+| `help`        | Show available commands                        |
+
 ***Nmap***
 ```bash
 nmap -OPTIONS IP
