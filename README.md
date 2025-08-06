@@ -63,6 +63,25 @@ smbclient -U bob -N -L \\\\TARGET // -N Anonymous -L list -U user
 | `exit`        | Disconnect from the SMB share                  |
 | `help`        | Show available commands                        |
 
+***SNMP***
+```bash
+snmpwalk -version -communitychain <TARGET> <OID>
+snmpwalk -v 2c -c public 10.129.42.253 1.3.6.1.2.1.1.5.0 // -v version -c community chain
+```
+| OID Prefix              | OID Example               | Name/Description                     | Notes                         |
+|------------------------|--------------------------|---------------------------------------|-------------------------------|
+| 1.3.6.1.2.1.1          | 1.3.6.1.2.1.1.1.0        | sysDescr - System Description         | General system info           |
+|                        | 1.3.6.1.2.1.1.3.0        | sysUpTime - System uptime             | Time since last reboot        |
+|                        | 1.3.6.1.2.1.1.4.0        | sysContact - Contact info             | Admin contact                 |
+|                        | 1.3.6.1.2.1.1.5.0        | sysName - Hostname                    | System name                   |
+|                        | 1.3.6.1.2.1.1.6.0        | sysLocation - Physical location       | Device location               |
+| 1.3.6.1.2.1.2          | 1.3.6.1.2.1.2.2.1.2.x    | ifDescr - Interface description       | Interface names               |
+|                        | 1.3.6.1.2.1.2.2.1.8.x    | ifOperStatus - Interface status       | up(1), down(2), testing(3)    |
+| 1.3.6.1.2.1.25         | 1.3.6.1.2.1.25.1.1.0     | hrSystemUptime - Host uptime          | Host resources MIB            |
+|                        | 1.3.6.1.2.1.25.2.3.1.6.x | hrStorageUsed - Storage used          | Disk/memory usage             |
+|                        | 1.3.6.1.2.1.25.3.3.1.2.x | hrProcessorLoad - CPU load            | Host CPU load                 |
+| 1.3.6.1.4.1            | Vendor-specific MIBs      | Various OIDs depending on vendor      | E.g., Cisco, HP, Juniper      |
+
 ***Nmap***
 ```bash
 nmap -OPTIONS IP
