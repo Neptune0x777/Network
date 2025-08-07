@@ -7,6 +7,7 @@ netstat -rn // will show us the networks accessible
 ***Netcat ncat or nc***
 ```bash
 nc IP PORT
+nc -lnvp PORT // -l listen mode -n no dns -v verbose -p port <PORT>
 ```
 | Option       | Description                                                            |
 |--------------|------------------------------------------------------------------------|
