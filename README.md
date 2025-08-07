@@ -159,12 +159,14 @@ nmap -OPTIONS IP
 gobuser <mode> -OPTIONS 
 gobuster dir -u http://10.10.10.121/ -w /usr/share/seclists/Discovery/Web-Content/common.txt // mode: dir -u URL -w Wordlist
 gobuster dns -d <TARGET> -w /usr/share/SecLists/Discovery/DNS/namelist.txt // mode dns -d dnsname -w Wordlist
+```
 
 ## Banner grabing
 ***Curl***
 ```bash
 curl -IL <URL>  // -I HEADERS ONLY -L Accept redirection
 ```
+
 ***whatsweb***
 ```bash
 Whatweb <target> or <target/range>
