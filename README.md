@@ -158,6 +158,7 @@ curl -IL <URL>  // -I HEADERS ONLY -L Accept redirection
 Whatweb <target> or <target/range>
 ```
 # Exploit
+[Payloads](payloads.md)
 ***finding***
 ```bash
 searchsploit openssh 7.2 // exploitdb packet
