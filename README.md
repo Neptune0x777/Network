@@ -22,7 +22,7 @@ nc -lnvp PORT
 | `-w <sec>`   | Set connection timeout in seconds                                      |
 | `-k`         | Keep listening after a connection closes (server mode)                 |
 
-***Python server***
+***Transfert method***
 ```bash
 python3 -m http.server 8000 // server
 wget http://<IP>:<PORT>/file // Download method 1
@@ -32,6 +32,8 @@ curl http://<IP>:<PORT>/<File> -o <Outputfilename> // Download method 2
 ```bash
 ssh <USER>@<IP> <OPTIONS>
 ssh root@10.10.10.10 -i id_rsa // chmod 600 on key
+scp <File> <User>@<RemoteHost>:/PATH/FILE
+scp <User@<RemoteHost>:/PATH/FILE ./FILENAME
 ```
 
 ***FTP***
