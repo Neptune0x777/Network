@@ -7,7 +7,7 @@ netstat -rn // will show us the networks accessible
 ***Netcat ncat or nc***
 ```bash
 nc IP PORT
-nc -lnvp PORT // -l listen mode -n no dns -v verbose -p port <PORT>
+nc -lnvp PORT 
 ```
 | Option       | Description                                                            |
 |--------------|------------------------------------------------------------------------|
@@ -22,6 +22,12 @@ nc -lnvp PORT // -l listen mode -n no dns -v verbose -p port <PORT>
 | `-w <sec>`   | Set connection timeout in seconds                                      |
 | `-k`         | Keep listening after a connection closes (server mode)                 |
 
+***Python server***
+```bash
+python3 -m http.server 8000 // server
+wget http://<IP>:<PORT>/file // Download method 1
+curl http://<IP>:<PORT>/<File> -o <Outputfilename> // Download method 2
+```
 ***SSH***
 ```bash
 ssh <USER>@<IP> <OPTIONS>
