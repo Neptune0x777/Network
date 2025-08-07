@@ -22,6 +22,12 @@ nc -lnvp PORT // -l listen mode -n no dns -v verbose -p port <PORT>
 | `-w <sec>`   | Set connection timeout in seconds                                      |
 | `-k`         | Keep listening after a connection closes (server mode)                 |
 
+***SSH***
+```bash
+ssh <USER>@<IP> <OPTIONS>
+ssh root@10.10.10.10 -i id_rsa // -i key
+```
+
 ***FTP***
 ```bash
 ftp -p <TARGET> // -p passive mode
