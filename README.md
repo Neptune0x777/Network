@@ -120,10 +120,12 @@ nmap -OPTIONS IP
 | `-oN`       | Save output to normal text file                                  |
 | `-oX`       | Save output to XML format                                       |
 | `-oG`       | Save output in grepable format (for easier parsing)             |
+| `-oA`       | All the format                                                  |
 | `-n`        | No DNS resolution (faster scan)                                 |
 | `-Pn`       | Skip host discovery (treat host as up)                          |
 | `--script`  | Specify NSE scripts to run                                      |
 | `-sn`       | Ping scan: only detect active hosts, no port scan               |
+| `--open`    | Only report open ports                                          |
 
 | Script Category      | Example Script        | Description                                                                 |
 |----------------------|-----------------------|-----------------------------------------------------------------------------|
