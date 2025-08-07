@@ -25,7 +25,7 @@ nc -lnvp PORT // -l listen mode -n no dns -v verbose -p port <PORT>
 ***SSH***
 ```bash
 ssh <USER>@<IP> <OPTIONS>
-ssh root@10.10.10.10 -i id_rsa // -i key
+ssh root@10.10.10.10 -i id_rsa // chmod 600 on key
 ```
 
 ***FTP***
