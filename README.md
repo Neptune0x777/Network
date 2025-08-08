@@ -157,14 +157,14 @@ nmap -sn -PE --disable-arp-ping <IP> // Nmap uses arp ping on local network by d
 | ftp                  | `ftp-anon`, `ftp-syst`| FTP server info and login checks                                            |
 | ssh                  | `ssh-hostkey`, `ssh-auth-methods` | SSH version and login info                                      |
 
-| **State**           | **Description**                                                                                                                                              |
-|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `open`              | The connection to the scanned port has been established. This can include TCP connections, UDP datagrams, or SCTP associations.                              |
-| `closed`            | The port is closed: the TCP response contains an RST flag. This scan result can also help determine if the target is alive.                                  |
-| `filtered`          | Nmap cannot determine whether the port is open or closed because no response was received or an error was returned (likely due to firewall filtering).       |
-| `unfiltered`        | Only occurs during a TCP-ACK scan. The port is accessible, but it cannot be determined whether it is open or closed.                                         |
-| `open\|filtered`     | No response received for the port. It could be open or filtered, possibly protected by a firewall or packet filter.                                        |
-| `closed\|filtered`   | Only appears in IP ID idle scans. It is not possible to determine if the port is closed or filtered by a firewall.                                         |
+| **State**               | **Description**                                                                                                                                              |
+|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `open`                  | The connection to the scanned port has been established. This can include TCP connections, UDP datagrams, or SCTP associations.                              |
+| `closed`                | The port is closed: the TCP response contains an RST flag. This scan result can also help determine if the target is alive.                                  |
+| `filtered`              | Nmap cannot determine whether the port is open or closed because no response was received or an error was returned (likely due to firewall filtering).       |
+| `unfiltered`            | Only occurs during a TCP-ACK scan. The port is accessible, but it cannot be determined whether it is open or closed.                                         |
+| `open\|filtered`        | No response received for the port. It could be open or filtered, possibly protected by a firewall or packet filter.                                          |
+| `closed\|filtered`      | Only appears in IP ID idle scans. It is not possible to determine if the port is closed or filtered by a firewall.                                           |
 
 
 ***Ports***
