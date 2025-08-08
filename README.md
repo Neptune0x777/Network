@@ -105,30 +105,39 @@ onesixtyone -c <DICT> <TARGET> //  brute force community string name : -c Dictio
 ```bash
 nmap -OPTIONS IP
 // Exemples
-sudo nmap 10.129.2.0/24 -sn -oA tnet | grep for | cut -d" " -f5 // scan for hosts up
+// Host discovery
+nmap 10.129.2.0/24 -sn -oA tnet | grep for | cut -d" " -f5 // scan for hosts up
+nmap -sn -oA tnet -iL hosts.lst | grep for | cut -d" " -f5 // use a list
+nmap -sn -PE -oA Host <IP>/24 // Force -sn to use only ICMP with -PE
+nmap -sn -PE --disable-arp-ping <IP> // Nmap uses arp ping on local network by default even with -PE --disable-arp-ping = force to not use ARP
 ```
-| Option    | Description                                                       |
-|-----------|-------------------------------------------------------------------|
-| `-sS`       | TCP SYN scan (stealth scan)                                     |
-| `-sT`       | TCP connect scan (full connection)                              |
-| `-sU`       | UDP scan                                                        |
-| `-p`        | Specify ports to scan (e.g., -p 80,443,1-100)                   | 
-| `-p-`       | Scan all TCP ports (1 to 65535)                                 |
-| `-F`        | Fast scan: scan only the most popular ports                     |
-| `-sV`       | Service version detection                                       |
-| `-sC`       | Run default scripts (Nmap Scripting Engine - NSE)               |
-| `-A`        | Full scan: OS detection, version detection, scripts, traceroute |
-| `-T0 to -T5`| Set scan speed/aggressiveness (-T0 slowest, -T5 fastest)        |
-| `-oN`       | Save output to normal text file                                 |
-| `-oX`       | Save output to XML format                                       |
-| `-oG`       | Save output in grepable format (for easier parsing)             |
-| `-oA`       | All the format                                                  |
-| `-sn`       | Ping scan only                                                  |                                               
-| `-n`        | No DNS resolution (faster scan)                                 |
-| `-Pn`       | Skip host discovery (treat host as up)                          |
-| `--script`  | Specify NSE scripts to run                                      |
-| `-sn`       | Ping scan: only detect active hosts, no port scan               |
-| `--open`    | Only report open ports                                          |
+| Option          | Description                                                     |
+|-----------------|-----------------------------------------------------------------|
+| `-sS`           | TCP SYN scan (stealth scan)                                     |
+| `-sT`           | TCP connect scan (full connection)                              |
+| `-sU`           | UDP scan                                                        |
+| `-p`            | Specify ports to scan (e.g., -p 80,443,1-100)                   | 
+| `-p-`           | Scan all TCP ports (1 to 65535)                                 |
+| `-F`            | Fast scan: scan only the most popular ports                     |
+| `-sV`           | Service version detection                                       |
+| `-sC`           | Run default scripts (Nmap Scripting Engine - NSE)               |
+| `-A`            | Full scan: OS detection, version detection, scripts, traceroute |
+| `-T0 to -T5`    | Set scan speed/aggressiveness (-T0 slowest, -T5 fastest)        |
+| `-iL file`      | Input List (ex2)                                                |
+| `-oN`           | Save output to normal text file                                 |
+| `-oX`           | Save output to XML format                                       |
+| `-oG`           | Save output in grepable format (for easier parsing)             |
+| `-oA`           | All the format                                                  |
+| `-sn`           | Ping scan only ICMP or Syn/ack or ARP on local                  |                                               
+| `-n`            | No DNS resolution (faster scan)                                 |
+| `-Pn`           | Skip host discovery (treat host as up)                          |
+| `-PE`           | Force ICMP Echo requests                                        |
+| `--script`      | Specify NSE scripts to run                                      |
+| `-sn`           | Ping scan: only detect active hosts, no port scan               |
+| `--open`        | Only report open ports                                          |
+| `--packet-trace | Shows all packets sent and received                             |
+| `--reason`      | Displays the reason for specific result                         |
+|--disable-arp-ping | Disable Arp ping (default host discovery on local network     |
 
 | Script Category      | Example Script        | Description                                                                 |
 |----------------------|-----------------------|-----------------------------------------------------------------------------|
@@ -138,15 +147,25 @@ sudo nmap 10.129.2.0/24 -sn -oA tnet | grep for | cut -d" " -f5 // scan for host
 | auth                 | `ftp-anon`, `http-auth`| Authentication-related checks (e.g., anonymous login)                      |
 | brute                | `ssh-brute`, `ftp-brute`| Performs brute force attacks on various protocols                         |
 | discovery            | `broadcast-dhcp-discover`, `dns-brute` | Gathers information from the network                       |
-| dos                  | `http-slowloris`      | Denial of service testing (⚠️ dangerous)                                    |
-| exploit              | `http-shellshock`, `ftp-proftpd-backdoor` | Attempts known exploits (⚠️ dangerous)                  |
+| dos                  | `http-slowloris`      | Denial of service testing (⚠️ dangerous)                                   |
+| exploit              | `http-shellshock`, `ftp-proftpd-backdoor` | Attempts known exploits (⚠️ dangerous)                 |
 | malware              | `http-malware-host`, `irc-unrealircd-backdoor` | Detects backdoors or malware-infected services     |
-| safe version scan    | `banner`, `http-title`| Basic fingerprinting/info gathering                                          |
-| smb                  | `smb-enum-shares`, `smb-os-discovery` | SMB-related information and vulnerability checks            |v
-| ssl                  | `ssl-cert`, `ssl-enum-ciphers` | Checks for SSL/TLS certificate info and weak ciphers                |
+| safe version scan    | `banner`, `http-title`| Basic fingerprinting/info gathering                                         |
+| smb                  | `smb-enum-shares`, `smb-os-discovery` | SMB-related information and vulnerability checks            |
+| ssl                  | `ssl-cert`, `ssl-enum-ciphers` | Checks for SSL/TLS certificate info and weak ciphers               |
 | http                 | `http-title`, `http-methods`, `http-headers` | Info about HTTP servers                              |
 | ftp                  | `ftp-anon`, `ftp-syst`| FTP server info and login checks                                            |
 | ssh                  | `ssh-hostkey`, `ssh-auth-methods` | SSH version and login info                                      |
+
+| **State**           | **Description**                                                                                                                                              |
+|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `open`              | The connection to the scanned port has been established. This can include TCP connections, UDP datagrams, or SCTP associations.                              |
+| `closed`            | The port is closed: the TCP response contains an RST flag. This scan result can also help determine if the target is alive.                                  |
+| `filtered`          | Nmap cannot determine whether the port is open or closed because no response was received or an error was returned (likely due to firewall filtering).       |
+| `unfiltered`        | Only occurs during a TCP-ACK scan. The port is accessible, but it cannot be determined whether it is open or closed.                                         |
+| `open|filtered`     | No response received for the port. It could be open or filtered, possibly protected by a firewall or packet filter.                                          |
+| `closed|filtered`   | Only appears in IP ID idle scans. It is not possible to determine if the port is closed or filtered by a firewall.                                           |
+
 
 ***Ports***
 
