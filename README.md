@@ -104,6 +104,8 @@ onesixtyone -c <DICT> <TARGET> //  brute force community string name : -c Dictio
 ***Nmap***
 ```bash
 nmap -OPTIONS IP
+// Exemples
+sudo nmap 10.129.2.0/24 -sn -oA tnet | grep for | cut -d" " -f5 // scan for hosts up
 ```
 | Option    | Description                                                       |
 |-----------|-------------------------------------------------------------------|
@@ -117,10 +119,11 @@ nmap -OPTIONS IP
 | `-sC`       | Run default scripts (Nmap Scripting Engine - NSE)               |
 | `-A`        | Full scan: OS detection, version detection, scripts, traceroute |
 | `-T0 to -T5`| Set scan speed/aggressiveness (-T0 slowest, -T5 fastest)        |
-| `-oN`       | Save output to normal text file                                  |
+| `-oN`       | Save output to normal text file                                 |
 | `-oX`       | Save output to XML format                                       |
 | `-oG`       | Save output in grepable format (for easier parsing)             |
 | `-oA`       | All the format                                                  |
+| `-sn`       | Ping scan only                                                  |                                               
 | `-n`        | No DNS resolution (faster scan)                                 |
 | `-Pn`       | Skip host discovery (treat host as up)                          |
 | `--script`  | Specify NSE scripts to run                                      |
