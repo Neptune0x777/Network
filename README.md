@@ -110,6 +110,8 @@ nmap 10.129.2.0/24 -sn -oA tnet | grep for | cut -d" " -f5 // scan for hosts up
 nmap -sn -oA tnet -iL hosts.lst | grep for | cut -d" " -f5 // use a list
 nmap -sn -PE -oA Host <IP>/24 // Force -sn to use only ICMP with -PE
 nmap -sn -PE --disable-arp-ping <IP> // Nmap uses arp ping on local network by default even with -PE --disable-arp-ping = force to not use ARP
+// Scans
+nmap <IP> -p 21 --packet-trace -Pn -n --disable-arp-ping // default scan -sS if sudo and -sT if not
 ```
 | Option          | Description                                                     |
 |-----------------|-----------------------------------------------------------------|
