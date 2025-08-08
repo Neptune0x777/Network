@@ -157,7 +157,7 @@ nmap -sn -PE --disable-arp-ping <IP> // Nmap uses arp ping on local network by d
 | ftp                  | `ftp-anon`, `ftp-syst`| FTP server info and login checks                                            |
 | ssh                  | `ssh-hostkey`, `ssh-auth-methods` | SSH version and login info                                      |
 
-| **State**               | **Description**                                                                                                                                              |
+| State                   | Description                                                                                                                                                  |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `open`                  | The connection to the scanned port has been established. This can include TCP connections, UDP datagrams, or SCTP associations.                              |
 | `closed`                | The port is closed: the TCP response contains an RST flag. This scan result can also help determine if the target is alive.                                  |
