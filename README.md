@@ -9,18 +9,19 @@ netstat -rn // will show us the networks accessible
 nc IP PORT
 nc -lnvp PORT 
 ```
-| Option       | Description                                                            |
-|--------------|------------------------------------------------------------------------|
-| `-l`         | Listen mode (waits for incoming connection)                            |
-| `-v`         | Verbose mode (prints connection details)                               |
-| `-n`         | Do not resolve DNS (use raw IP addresses)                              |
-| `-p <port>`  | Specify source port (used with `-l`)                                   |
-| `-e <cmd>`   | Execute a command after connection (⚠️ often disabled for security)    |
-| `-c <cmd>`   | Same as `-e`, but uses internal shell (less common)                    |
-| `-u`         | Use UDP instead of TCP                                                 |
-| `-z`         | Zero-I/O mode (used for port scanning)                                 |
-| `-w <sec>`   | Set connection timeout in seconds                                      |
-| `-k`         | Keep listening after a connection closes (server mode)                 |
+| Option          | Description                                                            |
+|-----------------|------------------------------------------------------------------------|
+| `-l`            | Listen mode (waits for incoming connection)                            |
+| `-v`            | Verbose mode (prints connection details)                               |
+| `-n`            | Do not resolve DNS (use raw IP addresses)                              |
+| `-p <port>`     | Specify source port (used with `-l`)                                   |
+| `-e <cmd>`      | Execute a command after connection (⚠️ often disabled for security)    |
+| `-c <cmd>`      | Same as `-e`, but uses internal shell (less common)                    |
+| `-u`            | Use UDP instead of TCP                                                 |
+| `-z`            | Zero-I/O mode (used for port scanning)                                 |
+| `-w <sec>`      | Set connection timeout in seconds                                      |
+| `-k`            | Keep listening after a connection closes (server mode)                 |
+| `--source-port` | Change the source port                                                 |
 
 ***Transfert method***
 ```bash
@@ -117,9 +118,13 @@ xsltproc <File.xml> -o File.html // transform xml output in html
 ```
 | Option          | Description                                                     |
 |-----------------|-----------------------------------------------------------------|
+| `-e`            | Sends all requests through the specified interface ex: -e tun0   | 
+| `-S`            | Specifies the source IP address                                  |
+| `--source-port` | Change the source port                                          | 
 | `-sS`           | TCP SYN scan (stealth scan)                                     |
 | `-sT`           | TCP connect scan (full connection)                              |
 | `-sU`           | UDP scan                                                        |
+| `-sA`           | Ack scan (better evasion)                                       |
 | `-p`            | Specify ports to scan (e.g., -p 80,443,1-100)                   | 
 | `-p-`           | Scan all TCP ports (1 to 65535)                                 |
 | `-F`            | Fast scan: scan only the most popular ports                     |
@@ -128,6 +133,7 @@ xsltproc <File.xml> -o File.html // transform xml output in html
 | `-A`            | Full scan: OS detection, version detection, scripts, traceroute |
 | `-T0 to -T5`    | Set scan speed/aggressiveness (-T0 slowest, -T5 fastest)        |
 | `-iL file`      | Input List (ex2)                                                |
+| `-O`            | OS detection scan                                               |
 | `-oN`           | Save output to normal text file                                 |
 | `-oX`           | Save output to XML format                                       |
 | `-oG`           | Save output in grepable format (for easier parsing)             |
@@ -139,9 +145,10 @@ xsltproc <File.xml> -o File.html // transform xml output in html
 | `--script`      | Specify NSE scripts to run                                      |
 | `-sn`           | Ping scan: only detect active hosts, no port scan               |
 | `--open`        | Only report open ports                                          |
-| `--packet-trace | Shows all packets sent and received                             |
+| `--packet-trace` | Shows all packets sent and received                             |
 | `--reason`      | Displays the reason for specific result                         |
-|--disable-arp-ping | Disable Arp ping (default host discovery on local network     |
+|`--disable-arp-ping` | Disable Arp ping (default host discovery on local network     |
+|`-D RND:5`       | Decoy RND:5 == 5 random ip problem not alive : -D ip,ip,trueip,ip |
 
 | Script Category      | Example Script        | Description                                                                 |
 |----------------------|-----------------------|-----------------------------------------------------------------------------|
