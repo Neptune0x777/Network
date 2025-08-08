@@ -112,6 +112,8 @@ nmap -sn -PE -oA Host <IP>/24 // Force -sn to use only ICMP with -PE
 nmap -sn -PE --disable-arp-ping <IP> // Nmap uses arp ping on local network by default even with -PE --disable-arp-ping = force to not use ARP
 // Scans
 nmap <IP> -p 21 --packet-trace -Pn -n --disable-arp-ping // default scan -sS if sudo and -sT if not
+// Format Output
+xsltproc <File.xml> -o File.html // transform xml output in html
 ```
 | Option          | Description                                                     |
 |-----------------|-----------------------------------------------------------------|
