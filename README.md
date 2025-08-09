@@ -21,7 +21,7 @@ nc -lnvp PORT
 | `-z`            | Zero-I/O mode (used for port scanning)                                 |
 | `-w <sec>`      | Set connection timeout in seconds                                      |
 | `-k`            | Keep listening after a connection closes (server mode)                 |
-| `--source-port` | Change the source port                                                 |
+| `--source-port` | Change the source port (ncat only -p on the others                     |
 
 ***Transfert method***
 ```bash
