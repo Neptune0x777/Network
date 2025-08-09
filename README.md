@@ -132,9 +132,9 @@ xsltproc <File.xml> -o File.html // transform xml output in html
 | `-sC`           | Run default scripts (Nmap Scripting Engine - NSE)               |
 | `-A`            | Full scan: OS detection, version detection, scripts, traceroute |
 | `-T0 to -T5`    | Set scan speed/aggressiveness (-T0 slowest, -T5 fastest)        |
-| `-iL file`      | Input List (ex2)                                                |
+| `-iL file`       | Input List (ex2)                                                |
 | `-O`            | OS detection scan                                               |
-| `-oN`           | Save output to normal text file                                 |
+| `-oN`           | Save output to normal text file                                  |
 | `-oX`           | Save output to XML format                                       |
 | `-oG`           | Save output in grepable format (for easier parsing)             |
 | `-oA`           | All the format                                                  |
@@ -145,10 +145,11 @@ xsltproc <File.xml> -o File.html // transform xml output in html
 | `--script`      | Specify NSE scripts to run                                      |
 | `-sn`           | Ping scan: only detect active hosts, no port scan               |
 | `--open`        | Only report open ports                                          |
-| `--packet-trace` | Shows all packets sent and received                             |
-| `--reason`      | Displays the reason for specific result                         |
-|`--disable-arp-ping` | Disable Arp ping (default host discovery on local network     |
+| `--packet-trace`| Shows all packets sent and received                             |
+| `--reason`      | Displays the reason for specific result                          |
+|`--disable-arp-ping` | Disable Arp ping (default host discovery on local network   |
 |`-D RND:5`       | Decoy RND:5 == 5 random ip problem not alive : -D ip,ip,trueip,ip |
+|`--dns-server <ns>` | Specifies the DNS                                             |
 
 | Script Category      | Example Script        | Description                                                                 |
 |----------------------|-----------------------|-----------------------------------------------------------------------------|
