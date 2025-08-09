@@ -40,6 +40,7 @@ dig <domain>
 | `+dnssec`     | Demande les enregistrements DNSSEC                               | `dig example.com +dnssec`          |
 | `+time=N`     | Définit le timeout en secondes (par défaut 5 secondes)            | `dig example.com +time=10`         |
 | `+retry=N`    | Nombre de tentatives en cas d’échec (par défaut 3)               | `dig example.com +retry=2`         |
+| `any`         | All records                                                      | `dig any <domain>`                 |
 
 ***Transfert method***
 ```bash
