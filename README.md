@@ -23,7 +23,7 @@ nc -lnvp PORT
 | `-k`            | Keep listening after a connection closes (server mode)                 |
 | `--source-port` | Change the source port (ncat only -p on the others                     |
 
-***Dns***
+***Dig***
 ```bash
 dig <domain>
 ```
