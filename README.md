@@ -214,7 +214,7 @@ curl -IL <URL>  // -I HEADERS ONLY -L Accept redirection
 Whatweb <target> or <target/range>
 ```
 # Exploit
-[Payloads](payloads.md) - [Privilege Escalation](privilege.md)
+[Payloads](payloads.md) - [Privilege Escalation](privilege.md) = [Enumeration](enum.md)
 
 ***finding***
 ```bash
