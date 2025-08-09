@@ -23,6 +23,24 @@ nc -lnvp PORT
 | `-k`            | Keep listening after a connection closes (server mode)                 |
 | `--source-port` | Change the source port (ncat only -p on the others                     |
 
+***Dns***
+```bash
+dig <domain>
+```
+| Option        | Description                                                      | Exemple                            |
+|---------------|------------------------------------------------------------------|------------------------------------|
+| `@server`     | Spécifie le serveur DNS à interroger                              | `dig @8.8.8.8 example.com`         |
+| `-t type`     | Type d’enregistrement DNS à demander (A, MX, NS, TXT…)           | `dig example.com -t MX`            |
+| `+short`      | Affiche une sortie simplifiée (juste les réponses)                  | `dig example.com +short`           |
+| `+noall`      | Désactive toutes les sections sauf celles demandées              | `dig example.com +noall +answer`   |
+| `+answer`     | Affiche uniquement la section réponse                              | `dig example.com +answer`          |
+| `+stats`      | Affiche les statistiques de la requête DNS                         | `dig example.com +stats`           |
+| `+trace`      | Trace la résolution DNS complète (serveurs racine à autoritaire) | `dig example.com +trace`           |
+| `-x`          | Effectue une recherche inverse (résolution PTR)                   | `dig -x 8.8.8.8`                   |
+| `+dnssec`     | Demande les enregistrements DNSSEC                               | `dig example.com +dnssec`          |
+| `+time=N`     | Définit le timeout en secondes (par défaut 5 secondes)            | `dig example.com +time=10`         |
+| `+retry=N`    | Nombre de tentatives en cas d’échec (par défaut 3)               | `dig example.com +retry=2`         |
+
 ***Transfert method***
 ```bash
 python3 -m http.server 8000 // server
