@@ -124,6 +124,7 @@ xsltproc <File.xml> -o File.html // transform xml output in html
 | `-sS`           | TCP SYN scan (stealth scan)                                     |
 | `-sT`           | TCP connect scan (full connection)                              |
 | `-sU`           | UDP scan                                                        |
+| `-sSU`          | -sU and -sS combined                                            |
 | `-sA`           | Ack scan (better evasion)                                       |
 | `-p`            | Specify ports to scan (e.g., -p 80,443,1-100)                   | 
 | `-p-`           | Scan all TCP ports (1 to 65535)                                 |
