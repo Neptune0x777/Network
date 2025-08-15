@@ -1,6 +1,6 @@
 # Network
 
-***Netstat***f
+***Netstat***ff
 ```bash
 netstat -rn // will show us the networks accessible
 ```
