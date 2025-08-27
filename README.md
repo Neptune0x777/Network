@@ -1,4 +1,4 @@
-# Networkf
+# Network
 
 ***Netstat***
 ```bash
