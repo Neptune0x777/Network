@@ -214,7 +214,7 @@ xsltproc <File.xml> -o File.html // transform xml output in html
 | 161  | TCP/UDP   | SNMP            | Used for network management (v1/v2c are unencrypted)                   |
 | 443  | TCP       | HTTPS           | Encrypted web traffic (SSL/TLS)                                        |
 | 445  | TCP       | SMB             | File sharing protocol (commonly targeted                               |
-| 3389 | TCP       | RDP             | Remote desktop access (often targeted, requires strong authentication) | xfreerdp /v:ip /u:user /p:password ou /prompt 
+| 3389 | TCP       | RDP             | Remote desktop access (often targeted, requires strong authentication) | xfreerdp /v:ip /u:user /p:password ou /prompt |
 
 # Web
 ***Gobuster***
