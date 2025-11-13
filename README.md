@@ -242,6 +242,7 @@ Whatweb <target> or <target/range>
 ***Injection sql***
 ```sql
 login: ` OR '1'='1' --
+login: admin'# 
 ```
 
 ***finding***
