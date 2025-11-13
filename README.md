@@ -239,6 +239,11 @@ Whatweb <target> or <target/range>
 # Exploit
 [Payloads](payloads.md) - [Privilege Escalation](privilege.md) = [Enumeration](enum.md)
 
+***Injection sql***
+```sql
+login: ` OR '1'='1' --
+```
+
 ***finding***
 ```bash
 searchsploit openssh 7.2 // exploitdb packet
