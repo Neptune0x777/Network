@@ -201,7 +201,7 @@ xsltproc <File.xml> -o File.html // transform xml output in html
 
 ***Ports***
 
-| Port | Protocole | Service         | Description                                                            |
+| Port | Protocole | Service         | Description                                                            | 
 |------|-----------|-----------------|------------------------------------------------------------------------|
 | 20/21| TCP	   | FTP             | Uncrypted file transfert                                               |
 | 22   | TCP       | SSH             | Secure remote access                                                   |
@@ -209,10 +209,12 @@ xsltproc <File.xml> -o File.html // transform xml output in html
 | 25   | TCP       | SMTP            | Sending emails (unencrypted by default)                                |
 | 53   | UDP/TCP   | DNS             | Domain name resolution                                                 |
 | 80   | TCP       | HTTP            | Unencrypted web traffic                                                |
+| 135  | TCP       | RPC             | Remote processus call                                                  |
+| 139  | TCP       | Netbios         | Old Samba                                                              |
 | 161  | TCP/UDP   | SNMP            | Used for network management (v1/v2c are unencrypted)                   |
 | 443  | TCP       | HTTPS           | Encrypted web traffic (SSL/TLS)                                        |
 | 445  | TCP       | SMB             | File sharing protocol (commonly targeted                               |
-| 3389 | TCP       | RDP             | Remote desktop access (often targeted, requires strong authentication) |
+| 3389 | TCP       | RDP             | Remote desktop access (often targeted, requires strong authentication) | xfreerdp /v:ip /u:user /p:password ou /prompt 
 
 # Web
 ***Gobuster***
