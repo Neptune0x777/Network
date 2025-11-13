@@ -216,6 +216,7 @@ xsltproc <File.xml> -o File.html // transform xml output in html
 | 445   | TCP       | SMB             | File sharing protocol (commonly targeted                               |                                                                                        |
 | 873   | TCP       | rsync           | Synchronise des fichiers                                               | rsync --list-only ip::, rsync --list-only ip::dir, rsync ip::dir/fichier fichier       |
 | 3389  | TCP       | MySQL           | Database                                                               | mysql -u user -h host SHOW databases; USE name; SHOW tables; SELECT rows FROM table where option   |
+| 5985  | TCP       | WinRM           | Windows remote management                                              | evil-winrm -i interface -u user -p password                                            |
 | 27017 | TCP       | MONGODB         | NoSql Database                                                         | mongosh mongodb://ip:port show dbs, use db, show collections, db.namecollection.find() |
 
 # Web
@@ -250,4 +251,6 @@ login: admin'#
 ***finding***
 ```bash
 searchsploit openssh 7.2 // exploitdb packet
+responder -I interface
+john -w=chemin
 ```
