@@ -244,6 +244,8 @@ Whatweb <target> or <target/range>
 login: ` OR '1'='1' --
 login: admin'# 
 ```
+***File inclusion***
+[File inclusion](https://github.com/carlospolop/Auto_Wordlists/blob/main/wordlists/file_inclusion_windows.txt)
 
 ***finding***
 ```bash
