@@ -220,7 +220,7 @@ xsltproc <File.xml> -o File.html // transform xml output in html
 ***Gobuster***
 ```bash
 gobuser <mode> -OPTIONS 
-gobuster dir -u http://10.10.10.121/ -w /usr/share/seclists/Discovery/Web-Content/common.txt // mode: dir -u URL -w Wordlist
+gobuster dir -u http://10.10.10.121/ -w /usr/share/seclists/Discovery/Web-Content/common.txt -x php,html // mode: dir -u URL -w Wordlist -x specifie l'extension de fichier php html etc..
 gobuster dns -d <TARGET> -w /usr/share/SecLists/Discovery/DNS/namelist.txt // mode dns -d dnsname -w Wordlist
 ```
 
