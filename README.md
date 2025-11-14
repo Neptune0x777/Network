@@ -225,6 +225,7 @@ xsltproc <File.xml> -o File.html // transform xml output in html
 gobuser <mode> -OPTIONS 
 gobuster dir -u http://10.10.10.121/ -w /usr/share/seclists/Discovery/Web-Content/common.txt -x php,html // mode: dir -u URL -w Wordlist -x specifie l'extension de fichier php html etc..
 gobuster dns -d <TARGET> -w /usr/share/SecLists/Discovery/DNS/namelist.txt // mode dns -d dnsname -w Wordlist
+gobuster vhost --append-domain -w wordlist -u url -r  // --append-domain important -r no dns request
 ```
 
 ## Banner grabing
