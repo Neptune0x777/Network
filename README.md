@@ -239,7 +239,7 @@ curl -IL <URL>  // -I HEADERS ONLY -L Accept redirection
 Whatweb <target> or <target/range>
 ```
 # Exploit
-[Payloads](payloads.md) - [Privilege Escalation](privilege.md) = [Enumeration](enum.md)
+[Payloads](payloads.md) - [Privilege Escalation](privilege.md) - [Enumeration](enum.md) - [Server side template injection](https://book.hacktricks.wiki/en/pentesting-web/ssti-server-side-template-injection/index.html)
 
 ***Injection sql***
 ```sql
