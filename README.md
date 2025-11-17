@@ -1,5 +1,5 @@
 # Networkd
-***Cheatsheet*** [database](database.md) | [jenkinsRCE](https://github.com/gquere/pwn_jenkins)
+***Cheatsheet*** [database](database.md) | [jenkinsRCE](https://github.com/gquere/pwn_jenkins) | [Payloads](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md)
 
 ***Netstat***
 ```bash
