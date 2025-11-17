@@ -15,6 +15,13 @@ ss -tn
 nc IP PORT
 nc -lnvp PORT 
 ```
+***Upgrading***
+```bash
+python -c 'import pty; pty.spawn("/bin/bash")'
+ctrl z
+stty raw -echo
+fg
+```
 | Option          | Description                                                            |
 |-----------------|------------------------------------------------------------------------|
 | `-l`            | Listen mode (waits for incoming connection)                            |
