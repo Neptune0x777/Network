@@ -63,6 +63,7 @@ ssh <USER>@<IP> <OPTIONS>
 ssh root@10.10.10.10 -i id_rsa // chmod 600 on key
 scp <File> <User>@<RemoteHost>:/PATH/FILE
 scp <User@<RemoteHost>:/PATH/FILE ./FILENAME
+ssh -L localport:localhost:remoteport user@ip # tunnel 
 ```
 
 ***FTP***
