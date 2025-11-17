@@ -4,6 +4,11 @@
 ```bash
 netstat -rn // will show us the networks accessible
 ```
+***Socket stat***
+```bash
+ss -tln # -t tcp -l listen -n no dns
+ss -tn
+```
 ***Netcat ncat or nc***
 ```bash
 nc IP PORT
