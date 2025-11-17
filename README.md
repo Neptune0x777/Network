@@ -249,6 +249,11 @@ login: admin'#
 # File inclusion
 [File inclusion](https://github.com/carlospolop/Auto_Wordlists/blob/main/wordlists/file_inclusion_windows.txt)
 
+# Bruteforce
+```bash
+hydra -L usernames.txt -p 'password' {target_IP} ssh # -L file -p password ip protocol
+```
+
 ***finding***
 ```bash
 searchsploit openssh 7.2 // exploitdb packet
