@@ -1,5 +1,5 @@
 # Networkd
-***Cheatsheet*** [database_sql](database.md)
+***Cheatsheet*** [database](database.md)
 
 ***Netstat***
 ```bash
