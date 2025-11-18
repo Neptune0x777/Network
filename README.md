@@ -1,6 +1,5 @@
 # Networkd
-***Cheatsheet*** [database](database.md) | [jenkinsRCE](https://github.com/gquere/pwn_jenkins) | [Payloads](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md) | [mssql injection](https://pentestmonkey.net/cheat-sheet/sql-injection/mssql-sql-injection-cheat-sheet)
-[netcat](https://github.com/int0x33/nc.exe/blob/master/readme.txt)
+***Cheatsheet*** [database](database.md) | [jenkinsRCE](https://github.com/gquere/pwn_jenkins) | [Payloads](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md) | [mssql injection](https://pentestmonkey.net/cheat-sheet/sql-injection/mssql-sql-injection-cheat-sheet) | [netcat](https://github.com/int0x33/nc.exe/blob/master/readme.txt)
 ***Netstat***
 ```bash
 netstat -rn // will show us the networks accessible
