@@ -274,4 +274,5 @@ hydra -L usernames.txt -p 'password' {target_IP} ssh # -L file -p password ip pr
 searchsploit openssh 7.2 // exploitdb packet
 responder -I interface
 john -w=chemin
+cat * | grep -i passw 
 ```
