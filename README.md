@@ -229,6 +229,7 @@ xsltproc <File.xml> -o File.html // transform xml output in html
 | 443   | TCP       | HTTPS           | Encrypted web traffic (SSL/TLS)                                        |                                                                                        |
 | 445   | TCP       | SMB             | File sharing protocol (commonly targeted                               | smbclient -L \\\\target\\(dir) -U user : smbclient \\\\\\\\target\\\\<dir> -U user : psexec.py user:password@ip |
 | 873   | TCP       | rsync           | Synchronise des fichiers                                               | rsync --list-only ip::, rsync --list-only ip::dir, rsync ip::dir/fichier fichier       |
+| 1433  | TCP       | mssql           | Microsoft sql                                                          | mssqlclient.py (impacket) domain/user:password@ip -windows-auth                        | 
 | 3389  | TCP       | MySQL           | Database                                                               | mysql -u user -h host SHOW databases; USE name; SHOW tables; SELECT rows FROM table where option   |
 | 5985  | TCP       | WinRM           | Windows remote management                                              | evil-winrm -i interface -u user -p password                                            |
 | 27017 | TCP       | MONGODB         | NoSql Database                                                         | mongosh mongodb://ip:port show dbs, use db, show collections, db.namecollection.find() |
