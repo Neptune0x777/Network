@@ -267,9 +267,25 @@ login: admin'#
 # Bruteforce
 ```bash
 hydra -L usernames.txt -p 'password' {target_IP} ssh # -L file -p password ip protocol
+hashcat -m 0 -a 0 hash.txt /usr/share/wordlists/rockyou.txt
 ```
 
+| Option | Signification | Exemple | Notes |
+|--------|--------------|---------|-------|
+| -m     | Type de hash (mode) | -m 0 | 0 = MD5, 1000 = NTLM, 3200 = bcrypt |
+| -a     | Mode d'attaque | -a 0 | 0 = wordlist, 3 = brute-force |
+| -o     | Fichier de sortie | -o result.txt | Sauvegarde le mot de passe cracké |
+| -w     | Workload (vitesse) | -w 3 | 1 = slow, 3 = fast |
+| --force | Forcer l’exécution | --force | À utiliser si erreur GPU |
+| --show | Afficher les résultats | hashcat --show hash.txt | Voir les mots de passe trouvés |
+| --status | Afficher l’avancement | --status | Utile pour scripts |
+| --restore | Restaurer session | --restore | Après interruption |
+| -O     | Kernel optimisé | -O | Plus rapide, mais limite certaines attaques |
+| -i     | Incrémentation brute-force | -i -a 3 ?d?d | Essaye longueurs croissantes |
+| -r     | Rule-based attack | -r rules/best64.rule | Applique des transformations |
+| -p     | Séparateur personnalisé | -p : | Spécifie le séparateur dans hash.txt |
 ***finding***
+
 ```bash
 searchsploit openssh 7.2 // exploitdb packet
 responder -I interface
