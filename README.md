@@ -293,11 +293,13 @@ hashcat -m 0 -a 0 hash.txt /usr/share/wordlists/rockyou.txt
 | -i     | Incrémentation brute-force | -i -a 3 ?d?d | Essaye longueurs croissantes |
 | -r     | Rule-based attack | -r rules/best64.rule | Applique des transformations |
 | -p     | Séparateur personnalisé | -p : | Spécifie le séparateur dans hash.txt |
+
 ***finding***
 
 ```bash
 searchsploit openssh 7.2 // exploitdb packet
 responder -I interface
 john -w=chemin
-cat * | grep -i passw 
+cat * | grep -i passw
+mkpasswd -m sha-512 password
 ```
