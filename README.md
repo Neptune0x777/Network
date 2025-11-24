@@ -16,6 +16,11 @@ ss -tn
 nc IP PORT
 nc -lnvp PORT 
 ```
+
+***Tcpdump
+```bash
+tcpdump -i <interface> port <port>
+```
 ***Upgrading***
 ```bash
 python -c 'import pty; pty.spawn("/bin/bash")'
@@ -227,12 +232,14 @@ xsltproc <File.xml> -o File.html // transform xml output in html
 | 135   | TCP       | RPC             | Remote processus call                                                  |                                                                                        |
 | 139   | TCP       | Netbios         | Old Samba                                                              |                                                                                        |
 | 161   | TCP/UDP   | SNMP            | Used for network management (v1/v2c are unencrypted)                   |                                                                                        |
+| 389   | TCP       | LDAP            | LDAP Protocol                                                          |                                                                                        |
 | 443   | TCP       | HTTPS           | Encrypted web traffic (SSL/TLS)                                        |                                                                                        |
 | 445   | TCP       | SMB             | File sharing protocol (commonly targeted                               | smbclient -L \\\\target\\(dir) -U user : smbclient \\\\\\\\target\\\\<dir> -U user : psexec.py user:password@ip |
 | 873   | TCP       | rsync           | Synchronise des fichiers                                               | rsync --list-only ip::, rsync --list-only ip::dir, rsync ip::dir/fichier fichier       |
 | 1433  | TCP       | mssql           | Microsoft sql                                                          | mssqlclient.py (impacket) domain/user:password@ip -windows-auth // active directory                        | 
 | 3389  | TCP       | MySQL           | Database                                                               | mysql -u user -h host SHOW databases; USE name; SHOW tables; SELECT rows FROM table where option   |
 | 5985  | TCP       | WinRM           | Windows remote management                                              | evil-winrm -i interface -u user -p password                                            |
+| 8443  | TCP       | HTTPS           | Alternate https                                                        | HTTPS alternatif (admin portal or anything)                                            |
 | 27017 | TCP       | MONGODB         | NoSql Database                                                         | mongosh mongodb://ip:port show dbs, use db, show collections, db.namecollection.find() |
 
 # Web
