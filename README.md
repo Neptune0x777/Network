@@ -240,7 +240,7 @@ xsltproc <File.xml> -o File.html // transform xml output in html
 | 3389  | TCP       | MySQL           | Database                                                               | mysql -u user -h host SHOW databases; USE name; SHOW tables; SELECT rows FROM table where option   |
 | 5985  | TCP       | WinRM           | Windows remote management                                              | evil-winrm -i interface -u user -p password                                            |
 | 8443  | TCP       | HTTPS           | Alternate https                                                        | HTTPS alternatif (admin portal or anything)                                            |
-| 27017 | TCP       | MONGODB         | NoSql Database                                                         | mongosh mongodb://ip:port show dbs, use db, show collections, db.namecollection.find() |
+| 27017 | TCP       | MONGODB         | NoSql Database                                                         | mongosh mongodb://ip:port show dbs, use db, show collections, db.namecollection.find().pretty() |
 
 # Web
 ***Gobuster***
